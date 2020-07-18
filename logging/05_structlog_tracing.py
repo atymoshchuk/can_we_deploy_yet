@@ -9,9 +9,7 @@ logger = structlog.get_logger()
 
 structlog.configure(
     processors=[
-        structlog.processors.KeyValueRenderer(
-            key_order=['event', 'trace_id'],
-        ),
+        structlog.processors.KeyValueRenderer(key_order=["event", "trace_id"],),
     ],
     context_class=structlog.threadlocal.wrap_dict(dict),
     logger_factory=structlog.stdlib.LoggerFactory(),
@@ -19,4 +17,4 @@ structlog.configure(
 
 
 log = logger.bind(trace_id=str(uuid.uuid4()))
-log.error('user logged in', user='test-user')
+log.error("user logged in", user="test-user")

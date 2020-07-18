@@ -7,12 +7,12 @@ structlog.stdlib._NAME_TO_LEVEL["europython"] = EUROPYTHON
 structlog.stdlib._LEVEL_TO_NAME[EUROPYTHON] = "europython"
 logging.addLevelName(EUROPYTHON, "europython")
 
+
 def europython(self, msg, *args, **kw):
     return self.log(EUROPYTHON, msg, *args, **kw)
 
-structlog.stdlib._FixedFindCallerLogger.europython = (
-    europython
-)
+
+structlog.stdlib._FixedFindCallerLogger.europython = europython
 structlog.stdlib.BoundLogger.europython = europython
 
 structlog.configure(
@@ -25,7 +25,7 @@ structlog.configure(
         structlog.processors.StackInfoRenderer(),
         structlog.processors.format_exc_info,
         structlog.processors.UnicodeDecoder(),
-        structlog.processors.JSONRenderer(indent=2, sort_keys=True)
+        structlog.processors.JSONRenderer(indent=2, sort_keys=True),
     ],
     context_class=dict,
     logger_factory=structlog.stdlib.LoggerFactory(),

@@ -6,4 +6,4 @@ except Exception as e:
 except BaseException as e:
     # KeyboardInterrupt inherits from BaseException so as to not be accidentally caught by code that catches Exception
     # and thus prevent the interpreter from exiting. -> from official Python documentation
-    print('BaseException occurred:', repr(e))
+    print("BaseException occurred:", repr(e))
