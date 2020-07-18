@@ -5,4 +5,4 @@ try:
 except Exception as e:  # catching Exception is not the best idea, try to be more specific
     print("Exception occurred:", repr(e))
 except BaseException as e:  # catching BaseException is even worse, as we can catch KeyboardInterrupt here as well
-    print('BaseException occurred:', repr(e))
+    print("BaseException occurred:", repr(e))
