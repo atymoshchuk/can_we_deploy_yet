@@ -9,3 +9,5 @@ try:
     raise Exception("Oh, something went wrong...")
 except Exception:
     logger_structlog.exception("logging exception")
+
+logger_structlog.info("Some info")
