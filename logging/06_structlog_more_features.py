@@ -25,6 +25,7 @@ structlog.configure(
         structlog.processors.StackInfoRenderer(),
         structlog.processors.format_exc_info,
         structlog.processors.UnicodeDecoder(),
+        structlog.processors.ExceptionPrettyPrinter(),  # this processor will process and beautify exceptions
         structlog.processors.JSONRenderer(indent=2, sort_keys=True),
     ],
     context_class=dict,
@@ -35,7 +36,9 @@ structlog.configure(
 
 
 my_logger = structlog.get_logger("test")
+try:
+    raise Exception("TEST!")
+except Exception:
+    my_logger.exception("Exception occurred")
 
 my_logger.europython("Hello Pythonista!")
-my_logger.info("Hello Pythonista!")
-my_logger.error("Hello Pythonista!")
