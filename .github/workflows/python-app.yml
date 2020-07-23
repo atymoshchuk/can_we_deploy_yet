@@ -34,17 +34,25 @@ jobs:
       continue-on-error: true
     - name: Run doc coverage
       run: |
-        interrogate exceptions logging
+        interrogate exceptions logging awesome_app
       continue-on-error: true
     - name: Run black
       run: |
-        black --check exceptions logging
-      continue-on-error: true
+        black --check exceptions logging awesome_app
     - name: Run pylint
       run: |
         pylint exceptions logging
       continue-on-error: true
     - name: Run isort
       run: |
-        isort --check-only --diff -rc exceptions logging
+        isort --check-only --diff -rc exceptions logging awesome_app
       continue-on-error: true
+  DockerfileLinter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Lint Dockerfile
+        uses: brpaz/hadolint-action@master
+        with:
+          dockerfile: "Dockerfile"

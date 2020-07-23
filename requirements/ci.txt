@@ -1,4 +1,5 @@
 -r base.txt
+-r awesome_app.txt
 
 black>=19.10b0
 isort~=4.3
