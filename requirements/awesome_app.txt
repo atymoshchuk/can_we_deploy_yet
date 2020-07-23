@@ -1,11 +1,3 @@
-click==7.1.2
-fastapi==0.58.1
-h11==0.9.0
-httptools==0.1.1
-pydantic==1.5.1
-six==1.15.0
-starlette==0.13.4
-structlog==20.1.0
-uvicorn==0.11.5
-uvloop==0.14.0
-websockets==8.1
+fastapi==0.60.1
+pydantic==1.6.1
+starlette==0.13.6
