@@ -56,4 +56,3 @@ jobs:
         uses: brpaz/hadolint-action@master
         with:
           dockerfile: "Dockerfile"
-        continue-on-error: true
