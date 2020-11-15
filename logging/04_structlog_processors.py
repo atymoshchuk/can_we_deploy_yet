@@ -26,7 +26,7 @@ log = structlog.wrap_logger(
     processors=[
         add_timestamp,
         censor_password,
-        structlog.processors.JSONRenderer(indent=1, sort_keys=True),
+        structlog.processors.JSONRenderer(indent=2, sort_keys=True),
     ],
 )
 log.warning("something", password="secret")
