@@ -8,10 +8,10 @@ logging.basicConfig(level=logging.INFO)
 logger_structlog.info(
     "Hello Pythonista!",
     key_id="1234",
-    conference_name="EuroPython",
+    conference_name="Awesome Conference",
     talk_name="Can we deploy yet?",
 )
 logger_standard.info(
     "Hello Pythonista! Conference name %s, talk name %s, key_id = %s"
-    % ("EuroPython", "Can we deploy yet?", "1234")
+    % ("Awesome Conference", "Can we deploy yet?", "1234")
 )

@@ -1,19 +1,19 @@
 import structlog
 import logging
 
-EUROPYTHON = 35
-structlog.stdlib.EUROPYTHON = EUROPYTHON
-structlog.stdlib._NAME_TO_LEVEL["europython"] = EUROPYTHON
-structlog.stdlib._LEVEL_TO_NAME[EUROPYTHON] = "europython"
-logging.addLevelName(EUROPYTHON, "europython")
+AWESOME_CONF = 35
+structlog.stdlib.AWESOME_CONF = AWESOME_CONF
+structlog.stdlib._NAME_TO_LEVEL["awesome_conf"] = AWESOME_CONF
+structlog.stdlib._LEVEL_TO_NAME[AWESOME_CONF] = "awesome_conf"
+logging.addLevelName(AWESOME_CONF, "awesome_conf")
 
 
-def europython(self, msg, *args, **kw):
-    return self.log(EUROPYTHON, msg, *args, **kw)
+def awesome_conf(self, msg, *args, **kw):
+    return self.log(AWESOME_CONF, msg, *args, **kw)
 
 
-structlog.stdlib._FixedFindCallerLogger.europython = europython
-structlog.stdlib.BoundLogger.europython = europython
+structlog.stdlib._FixedFindCallerLogger.awesome_conf = awesome_conf
+structlog.stdlib.BoundLogger.awesome_conf = awesome_conf
 
 structlog.configure(
     processors=[
@@ -36,6 +36,6 @@ structlog.configure(
 
 my_logger = structlog.get_logger("test")
 
-my_logger.europython("Hello Pythonista!")
+my_logger.awesome_conf("Hello Pythonista!")
 my_logger.info("Hello Pythonista!")
 my_logger.error("Hello Pythonista!")
