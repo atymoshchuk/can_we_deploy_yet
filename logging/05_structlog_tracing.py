@@ -9,7 +9,9 @@ logger = structlog.get_logger()
 
 structlog.configure(
     processors=[
-        structlog.processors.KeyValueRenderer(key_order=["event", "trace_id"],),
+        structlog.processors.KeyValueRenderer(
+            key_order=["event", "trace_id"],
+        ),
     ],
     context_class=structlog.threadlocal.wrap_dict(dict),
     logger_factory=structlog.stdlib.LoggerFactory(),
