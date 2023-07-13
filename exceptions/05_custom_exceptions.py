@@ -5,5 +5,7 @@ class MyCustomException(Exception):
 
 try:
     raise MyCustomException("Something custom happened!!!")
-except MyCustomException as e:  # always a good idea to be more specific in catching exceptions
+except (
+    MyCustomException
+) as e:  # always a good idea to be more specific in catching exceptions
     print("We are handling this exception here!", repr(e))
