@@ -1,4 +1,4 @@
-FROM tiangolo/uvicorn-gunicorn:python3.11
+FROM python:3.12
 
 COPY ./awesome_app /app
 COPY ./requirements/awesome_app.txt /app
@@ -9,4 +9,4 @@ ENV PYTHONPATH=/app
 
 RUN pip install --no-cache-dir -r awesome_app.txt
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
+CMD ["fastapi", "run", "main.py"]
