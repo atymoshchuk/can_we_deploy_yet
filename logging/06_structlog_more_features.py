@@ -1,5 +1,6 @@
-import structlog
 import logging
+
+import structlog
 
 AWESOME_CONF = 35
 structlog.stdlib.AWESOME_CONF = AWESOME_CONF

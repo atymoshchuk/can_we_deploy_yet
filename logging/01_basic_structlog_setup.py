@@ -1,5 +1,6 @@
-import structlog
 import logging
+
+import structlog
 
 logger_structlog = structlog.get_logger()
 logger_standard = logging.getLogger(__name__)
