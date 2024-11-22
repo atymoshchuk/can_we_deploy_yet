@@ -1,2 +1,2 @@
-structlog==23.1.0
+structlog==24.4.0
 colorama==0.4.6
