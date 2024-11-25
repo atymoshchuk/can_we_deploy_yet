@@ -1,4 +1,5 @@
 import uuid
+
 import structlog
 
 # This example is taken from https://www.structlog.org/en/stable/index.html

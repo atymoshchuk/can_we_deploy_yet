@@ -1,6 +1,7 @@
 import datetime
 import logging
 import sys
+
 import structlog
 
 # This example is taken from https://www.structlog.org/en/stable/index.html
