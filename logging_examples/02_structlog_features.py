@@ -1,9 +1,11 @@
 import structlog
 
-logger_structlog = structlog.get_logger(__name__)
+logger_structlog = structlog.get_logger()
 
 logger_structlog = logger_structlog.bind(
-    key_id="1234", conference_name="Awesome Conference", talk_name="Can we deploy yet?"
+    key_id="1234",
+    conference_name="Awesome Conference",
+    talk_name="Production ready code?",
 )
 try:
     raise Exception("Oh, something went wrong...")

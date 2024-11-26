@@ -23,7 +23,7 @@ def censor_password(_, __, event_dict):
 
 
 log = structlog.wrap_logger(
-    logging.getLogger(__name__),
+    logging.getLogger(),
     processors=[
         add_timestamp,
         censor_password,

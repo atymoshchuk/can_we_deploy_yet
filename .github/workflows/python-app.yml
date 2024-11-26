@@ -34,18 +34,18 @@ jobs:
       continue-on-error: true
     - name: Run doc coverage
       run: |
-        interrogate exceptions logging awesome_app
+        interrogate exceptions_examples logging_examples awesome_app
       continue-on-error: true
     - name: Run black
       run: |
-        black --check exceptions logging awesome_app
+        black --check exceptions_examples logging_examples awesome_app
     - name: Run pylint
       run: |
         pylint exceptions logging
       continue-on-error: true
     - name: Run isort
       run: |
-        isort --check-only --diff -rc exceptions logging awesome_app
+        isort --check-only --diff -rc exceptions_examples logging_examples awesome_app
       continue-on-error: true
   DockerfileLinter:
     runs-on: ubuntu-latest
