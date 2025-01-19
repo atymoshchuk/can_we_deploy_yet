@@ -1,4 +1,4 @@
-FROM python:3.12-slim AS compile-image
+FROM python:3.14.0a1-slim AS compile-image
 
 WORKDIR /app
 
@@ -13,7 +13,7 @@ ENV PATH="/opt/venv/bin:$PATH"
 COPY ./requirements/awesome_app.txt .
 RUN pip install --no-cache-dir -r awesome_app.txt
 
-FROM python:3.12-slim AS build-image
+FROM python:3.14.0a1-slim AS build-image
 COPY --from=compile-image /opt/venv /opt/venv
 
 WORKDIR /app
